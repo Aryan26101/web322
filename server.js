@@ -1,11 +1,10 @@
-const http = require("http");
-const host = 'localhost';
-const port = 8000;
-const requestListener = function (req, res) {
-    res.writeHead(200);
-    res.end("Aryan Rakeshbhai Rathod 129796215");
-};
-const server = http.createServer(requestListener);
-server.listen(port, host, () => {
-    console.log(`Server is running on http://${host}:${port}`);
+var HTTP_PORT = process.env.PORT || 8080;
+var express = require("express");
+var app = express();
+
+
+app.get("/", (req, res) => {
+    res.send("Aryan Rakeshbhai Rathod 129796215");
 });
+
+app.listen(HTTP_PORT);
